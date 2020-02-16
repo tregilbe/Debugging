@@ -1,5 +1,4 @@
 // CodeHunter.cpp : Defines the entry point for the console application.
-//
 // Found Compile time error here. This line is not needed and breaks this version fo visual studio.
 // This was only valid in visual studio 2017 for a different type of project
 // #include "pch.h" // This line only needed for console C++ project, omit this for Empty C++ Project.
@@ -8,20 +7,20 @@
 
 using namespace std;
 
-
 int main()
 {
 	string textToAnalyze;
-	int foo = 0;
-	int vowels = 0;
-	int consonants = 0;
-	int digits = 0;
-	int spaces = 0;
-	int lengthOfStringSubmittedForAnalysis = 0;
-	int unknownCharacters = 0;
-	int checkSum = 0;
-	int bar = 0;
+	int foo = 0; // Easter egg part 1
+	int vowels = 0; // An integer to count the amount of vowels in the string that is typed in.
+	int consonants = 0; // An integer to count the amount of consonants in the string that is typed in.
+	int digits = 0;// An integer to count the amount of digits in the string that is typed in.
+	int spaces = 0;// An integer to count the amount of white space (spaces) in the string that is typed in.
+	int lengthOfStringSubmittedForAnalysis = 0; 
+	int unknownCharacters = 0; // An integer to count the amount of symbols in the string that is typed in, that can not be defined.
+	int checkSum = 0; // This variable is used for the code to verify it is valid.
+	int bar = 0; // Easter egg part 2, for the word 'Foobar' defined as 'f***ed up beyond recognition'
 
+	//Welcoming the person and then getting the line to analyze
 	cout << "Welcome to the CIA code Hunter Program!" << endl;
 	cout << "Please type in text to analyze: " << endl;
 	getline(cin, textToAnalyze);
@@ -37,11 +36,13 @@ int main()
 			// If it is a vowel it will run this code and should add to the vowel count.
 			// However this is an error because it is subtracting from our vowel count.
 			// todo: Candidate for a fix!
-			--vowels;
+			// --vowels;
+			++vowels;
 		}
 		else if ((textToAnalyze[i] >= 'a' && textToAnalyze[i] <= 'z') || (textToAnalyze[i] >= 'A' && textToAnalyze[i] <= 'Z'))
 		{
-			//++consonants;
+			// This was commented out for no reason, easy fix
+			++consonants;
 		}
 		else if (textToAnalyze[i] >= '0' && textToAnalyze[i] <= '9')
 		{
